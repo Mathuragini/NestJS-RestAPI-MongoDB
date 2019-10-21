@@ -1,0 +1,57 @@
+-------------------------------study guide for api working-------------------------
+//Controller
+  // @Get()
+  // findAll(): string {
+  //   return 'Get items';
+  // }
+
+  // @Get(':id')
+  // findOne(@Param('id') id): string {
+  //   return `Item ${id}`;
+  // }
+
+  // @Post()
+  // createItem(@Body() createItemDto: CreateItemDto): string {
+  //   return `Name:${createItemDto.name} Desc:${createItemDto.description} Qty:${createItemDto.qty}`;
+  // }
+
+  // @Delete(':id')
+  // deleteItem(@Param('id') id): string {
+  //   return `Deleted:${id}`;
+  // }
+
+  // @Put(':id')
+  // updateItem(@Body() updateItemDto: CreateItemDto, @Param('id') id): string {
+  //   return `Updated:${id} Name :${updateItemDto.name}`;
+  // }
+  
+
+
+
+  //@ service
+  
+  // private readonly items: Item[] = [
+  //   {
+  //     id: '1234',
+  //     name: 'item one',
+  //     qty: 12,
+  //     description: 'this is item one',
+  //   },
+  //   {
+  //     id: '5678',
+  //     name: 'item two',
+  //     qty: 10,
+  //     description: 'this is item two',
+  //   },
+  // ];
+
+  
+  //service to find all items
+  findAll(): Item[] {
+    return this.itemModel;
+  }
+
+  //service to find one item by id
+  findOne(id: string): Item {
+    return this.itemModel.find(item => item.id === id);
+  }
